@@ -24,6 +24,9 @@ public class List {
 		System.out.println(list.getElement(4).getData());
 		System.out.println(list.deleteElement(4).getData());
 		
+		System.out.println("List from the root: ");
+		list.printLinkedListHead();
+		
 		
 		System.out.println("List from the tail: ");
 		list.printLinkedListTail();
