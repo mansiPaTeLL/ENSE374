@@ -7,17 +7,28 @@ public class List {
 		LinkedList list = new LinkedList();
 		ListElement element = new ListElement();
 		
-		element.setData(5);
-		
-		list.addElement(element);
+	
 		
 		System.out.println("Building Linked List!!");
-		for(int i = 0; i < 10; i++)
+		for(int i = 0; i <= 10; i++)
 		{
 			element.setData(i);
 		    list.addElement(element);	
+		    
 		}
 		
+		System.out.println("List from the root: ");
+		list.printLinkedListHead();
+		
+		System.out.println("Deleting node 1: ");
+		System.out.println(list.getElement(1).getData());
+		System.out.println(list.deleteElement(1).getData());
+		
+		System.out.println("List from the root: ");
+		list.printLinkedListHead();
+		
+		System.out.println("List from the tail: ");
+		list.printLinkedListTail();
 
 	}
 
