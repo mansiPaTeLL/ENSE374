@@ -24,6 +24,7 @@ public class LinkedList {
 			
 			else {
 				this.tail.setNext(this.listelement);
+				this.listelement.setPrevious(tail);
 				this.tail = this.listelement;
 			}
 			
@@ -65,7 +66,8 @@ public class LinkedList {
 				}
 			}
 			if (temp != null) {
-				temp.setNext(listelement.getNext()); 
+				temp.setNext(listelement.getNext());
+				listelement.getNext().setNext(temp);
 				}
 			
 			    counter --;
@@ -83,31 +85,29 @@ public class LinkedList {
 			}
 			
 			listelement = head;
-			for(int i = 0; i < counter - 1; i++) {
+			for(int i = 0; i < counter-1; i++) {
 				System.out.print(listelement.getData() + " , ");
 				listelement = listelement.getNext();
 			}
+			
+			System.out.println(listelement.getData());
 		}
 		
 		public void printLinkedListTail() {
 
-			int[] array_list= new int[counter];
 			if(head == null) {
 				System.out.println("The list is empty");
 				return;
 			}
 			
-			listelement = head;
-			for(int i = 0; i < counter; i++) {
-				array_list[i] = listelement.getData();
-				listelement = listelement.getNext();
+			listelement = tail;
+			for(int i = 0; i < counter-1; i++) {
+				System.out.print(listelement.getData() + " , ");
+				listelement = listelement.getPrevious();
 			}
 			
-	
-			for(int i = counter - 1; i > 0; i--) {
-				System.out.print(array_list[i] + " , ");
-			}
-			System.out.println(array_list[0]);
+			System.out.println(listelement.getData());
+			
 		}
 }
 
