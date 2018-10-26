@@ -1,11 +1,13 @@
 
 public class ListElement {
 	private ListElement next;
+	private ListElement previous;
 	private int data;
 	
 	public ListElement () {
 		this.data = 0;
 		this.next = null;
+		this.setPrevious(null);
 		
 	}
 	public int getData() {
@@ -19,5 +21,11 @@ public class ListElement {
 	}
 	public void setNext(ListElement next) {
 		this.next = next;
+	}
+	public ListElement getPrevious() {
+		return previous;
+	}
+	public void setPrevious(ListElement previous) {
+		this.previous = previous;
 	}
 }
